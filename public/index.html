@@ -12,7 +12,7 @@
 
     <script>
         document.getElementById("generate-lineup").addEventListener("click", async () => {
-            const response = await fetch("/api/lineup");
+            const response = await fetch("/api/lineup.py");
             const lineup = await response.json();
             document.getElementById("lineup-output").textContent = JSON.stringify(lineup, null, 2);
         });
