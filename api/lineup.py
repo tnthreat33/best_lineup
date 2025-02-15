@@ -19,7 +19,7 @@ def scrape_table_data():
     }
 
     # Make the request to ScraperAPI
-    response = requests.get("https://api.scraperapi.com/", params=payload, timeout=30)  
+    response = requests.get("https://api.scraperapi.com/", params=payload, timeout=10)  
 
     if response.status_code != 200:
         print(f"Failed to fetch data. Status code: {response.status_code}")
