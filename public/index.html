@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softball Lineup Generator</title>
+</head>
+<body>
+    <h1>Optimized Softball Lineup</h1>
+    <button id="generate-lineup">Generate Lineup</button>
+    <pre id="lineup-output"></pre>
+
+    <script>
+        document.getElementById("generate-lineup").addEventListener("click", async () => {
+            const response = await fetch("/api/lineup");
+            const lineup = await response.json();
+            document.getElementById("lineup-output").textContent = JSON.stringify(lineup, null, 2);
+        });
+    </script>
+</body>
+</html>
